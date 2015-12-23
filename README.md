@@ -13,17 +13,21 @@ try
     QuickConfiker configuration( "settings.ini" );
 
     // We can set the type before we try to find the parameters like this:
-    double var1;
-    int var2;
-    configuration.setParameter( "firstVariable", var1 );
-    configuration.setParameter( "secondVariable",var2 );
+    double  var1;
+    int     var2;
+    configuration.setParameter( "firstVariable" , var1 );
+    configuration.setParameter( "secondVariable" , var2 );
 
     // Or we can specify the type in the call like this:
-    double var3 = configuration.getParameter<double>( "thirdVariable" );
-    char var4 = configuration.getParameter<char>( "FirstLetter" );
-    string var5 = configuration.getParameter<string>( "Surname" );
+    double  var3 = configuration.getParameter< double >( "thirdVariable" );
+    char    var4 = configuration.getParameter< char >( "FirstLetter" );
+    string  var5 = configuration.getParameter< string >( "Surname" );
 
     //This method of specifying the type in the call means that these functions can be called during the construction of a class!
+}
+catch ( QuickConfikerError error )
+{
+    error.what();
 }
 ```
 
