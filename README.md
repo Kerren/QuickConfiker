@@ -31,6 +31,15 @@ catch ( QuickConfikerError error )
 }
 ```
 
+In this case the file `settings.ini` would look as follows:
+```
+firstVariable 3.14159
+secondVariable 10
+thirdVariable 9.81
+FirstLetter K
+Surname Ortlepp
+```
+
 ## Error Handling
 This library contains its own error class known as `QuickConfikerError`. This error class is thrown when there are problems during the configuration. The `what()` function can be called to print out the error to console and the `get()` function can be called to get the error in the form of a string. This is useful because the error codes are set as constants in the library and can be searched for in each `QuickConfikerError` error that's returned. Example usage would include:
 
