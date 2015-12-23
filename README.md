@@ -1,5 +1,7 @@
 # QuickConfiker
-A simple C++ class that allows you to load options from a configuration file.
+A simple C++ class that allows you to load options from a configuration file. You're able to specify the filename, the type of delimiter that is used, and whether or not the file should case sensitive.
+
+This is a templated class which means that you specify the variable type when you're looking for the parameter. Simply put, if you only have primitive types such as `int`, `float`, `double`, `char`, `bool`, `string`, etc, you'll be able to read these values straight into variables.
 
 
 ## Library Usage
