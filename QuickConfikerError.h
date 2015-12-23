@@ -30,6 +30,7 @@
 #include <string>
 
 using std::cout;
+using std::cerr;
 using std::endl;
 using std::stringstream;
 using std::string;
@@ -41,6 +42,16 @@ using std::string;
  * If the file isn't found the error code below will be used.
  */
 const string QCERROR_FILE_NOT_FOUND("E#001\n");
+
+/**
+ * If the delimiter is not found in the file then this error will be called. Note this will only be thrown when a user tries to set a parameter, before then this error shouldn't exist!
+ */
+const string QCERROR_DELIMITER_INCORRECT("E#002\n");
+
+/**
+ * This error occurs when the user has called a function to retrieve a parameter that doesn't exist and doesn't allow for the option for a boolean to be set when it's not found.
+ */
+const string QCERROR_PARAMETER_NOT_FOUND("E#003\n");
 
 /**
  * The QuickConfikerError class is the class that will be thrown whenever an error occurs. Error codes are described as global constant strings and when the get() function is called, the error code can be searched for.

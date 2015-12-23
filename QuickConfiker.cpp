@@ -24,7 +24,9 @@
 
 #include "QuickConfiker.h"
 
-QuickConfiker::QuickConfiker( const string& filename )
+QuickConfiker::QuickConfiker( const string& filename, const string fileDelimiter, const bool caseSensitive ):
+    delimiter( fileDelimiter ),
+    isCaseSensitive( caseSensitive )
 {
     ifstream input( filename );
 
@@ -32,7 +34,15 @@ QuickConfiker::QuickConfiker( const string& filename )
     {
         throw QuickConfikerError( QCERROR_FILE_NOT_FOUND, "There was an error opening the file named ==> ", filename, " <== please ensure that it's in the right folder an the path to this file was specified correctly!" );
     }
+
+    string line;
+
+    while ( getline( input, line ) )
+    {
+        configurationLines.push_back( stringstream( line ) );
+    }
 }
+
 
 QuickConfiker::~QuickConfiker()
 {
